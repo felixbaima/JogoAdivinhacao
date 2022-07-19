@@ -1,0 +1,35 @@
+# jogo da advinhaçao
+#tenho vai ter um numero aleatorio
+#vou ecolher um numero aleatorio e o jogo vai dizer se foi maior ou menor qe o escolhido
+
+print("*********************************")
+print("Bem vindo ao jogo de Adivinhação!")
+print("*********************************")
+# CONFIGURAÇAO INICIAL
+numeromagico = 10
+tentativas = 3
+
+
+for rodada in range  (tentativas):
+    chute_str = input("Escolha um numero de 0 a 100:")
+    print(f' Voce tem o total de : {tentativas} tentativas, ja gastou {rodada+1}')
+    print('Voce chutou', chute_str)
+    chute = int(chute_str)
+    if (chute < 1 or chute > 100):
+        print('digite um numero valido')
+        continue
+
+    acertou = chute == numeromagico
+    maior = chute > numeromagico
+    menor = chute < numeromagico
+
+    if (acertou):
+        print("Acertou Mizeravi")
+        break
+    else:
+        if (maior):
+            print("foi alto")
+        elif (menor):
+            print("foi baixo")
+
+print("fim de jogo")
